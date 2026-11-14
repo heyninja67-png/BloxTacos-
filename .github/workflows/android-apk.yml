@@ -96,7 +96,18 @@ jobs:
         run: godot --headless --editor --path . --import --quit
 
       - name: Install Android build template
-        run: godot --headless --editor --path . --install-android-build-template --quit
+        shell: bash
+        run: |
+          set -euo pipefail
+          TEMPLATE_DIR="$HOME/.local/share/godot/export_templates/${GODOT_VERSION}.stable"
+          mkdir -p android/build
+          godot --headless --editor --path . --install-android-build-template --quit || true
+          if [[ ! -f android/build/build.gradle ]]; then
+            test -f "$TEMPLATE_DIR/android_source.zip"
+            unzip -q -o "$TEMPLATE_DIR/android_source.zip" -d android/build
+          fi
+          test -f android/build/build.gradle
+          echo "Android build template instalado e verificado."
 
       - name: Validate project scripts and imports
         run: godot --headless --editor --path . --quit
