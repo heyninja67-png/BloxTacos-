@@ -564,9 +564,9 @@ func _show_home_page() -> void:
 
 func _show_games_page() -> void:
 	_page_content.add_child(_page_title("Experiências", "Entre em uma das experiências incluídas nesta versão."))
-	_page_content.add_child(_experience_card("Classic Yard", "Baseplate com studs, obstáculos e construções clássicas.", Color("#6e9d45"), "classic", true))
-	_page_content.add_child(_experience_card("Natural Disasters", "Rodadas de enchente, tremor e ventania com 60 segundos de sobrevivência.", Color("#4d89b8"), "disaster", true))
-	_page_content.add_child(_experience_card("Pizza Place", "Trabalhe em quatro estações para concluir pedidos de pizza.", Color("#bd6943"), "pizza", true))
+	_page_content.add_child(_experience_card("Classic Yard", "Baseplate com studs, obstáculos e construções clássicas.", Color("#6e9d45"), "classic"))
+	_page_content.add_child(_experience_card("Natural Disasters", "Rodadas de enchente, tremor e ventania com 60 segundos de sobrevivência.", Color("#4d89b8"), "disaster"))
+	_page_content.add_child(_experience_card("Pizza Place", "Trabalhe em quatro estações para concluir pedidos de pizza.", Color("#bd6943"), "pizza"))
 
 func _show_avatar_page() -> void:
 	_page_content.add_child(_page_title("Avatar", "Escolha o personagem que vai acompanhar você nas experiências."))

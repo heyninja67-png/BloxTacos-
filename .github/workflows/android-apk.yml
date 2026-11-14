@@ -95,6 +95,9 @@ jobs:
       - name: Import project resources (GLB avatars included)
         run: godot --headless --editor --path . --import --quit
 
+      - name: Install Android build template
+        run: godot --headless --editor --path . --install-android-build-template --quit
+
       - name: Validate project scripts and imports
         run: godot --headless --editor --path . --quit
 
