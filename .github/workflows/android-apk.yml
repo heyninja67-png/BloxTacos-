@@ -115,6 +115,12 @@ jobs:
       - name: Smoke test main scene
         run: godot --headless --path . --quit-after 15
 
+      - name: Start Android Debug Bridge
+        shell: bash
+        run: |
+          adb start-server
+          adb version
+
       - name: Export APK
         run: |
           mkdir -p build
